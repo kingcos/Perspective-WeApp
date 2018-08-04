@@ -2,7 +2,7 @@
 
 A WeApp of my personal blog - Perspective.
 
-![WeApp code](img/weapp_code.jpg)
+<img src="img/weapp_code.jpg" width="215">
 
 ## LICENSE
 
