@@ -90,7 +90,7 @@ query($repo_owner: String!, $repo_name: String!, $label_name: [String!]) {
 # { "repo_owner": "kingcos", "repo_name": "Perspective", "issue_num": 5 }
 query($repo_owner: String!, $repo_name: String!, $issue_num: Int!) {
     repository(owner: $repo_owner, name: $repo_name) {
-        issue(number: 5) {
+        issue(number: $issue_num) {
             title
             createdAt
             labels(first: 1) {
