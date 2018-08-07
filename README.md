@@ -14,7 +14,7 @@ A WeApp of my personal blog - Perspective.
 
 ```graphql
 # {"repo_owner": "kingcos", "repo_name": "Perspective", "label_count": 5  }
-query($repo_owner: String!, $repo_name: String!, $label_count: Int!) {
+query Labels ($repo_owner: String!, $repo_name: String!, $label_count: Int!) {
     repository(owner: $repo_owner, name: $repo_name) {
         labels(first: $label_count) {
             nodes {
@@ -45,7 +45,7 @@ query($repo_owner: String!, $repo_name: String!, $label_count: Int!) {
 
 ```graphql
 # {"repo_owner": "kingcos", "repo_name": "Perspective", "label_name": "[Tips]" }
-query($repo_owner: String!, $repo_name: String!, $label_name: [String!]) {
+query Issues ($repo_owner: String!, $repo_name: String!, $label_name: [String!]) {
     repository(owner: $repo_owner, name: $repo_name) {
         issues(first: 1, states: OPEN, labels: $label_name) {
             nodes {
@@ -88,7 +88,7 @@ query($repo_owner: String!, $repo_name: String!, $label_name: [String!]) {
 
 ```graphql
 # { "repo_owner": "kingcos", "repo_name": "Perspective", "issue_num": 5 }
-query($repo_owner: String!, $repo_name: String!, $issue_num: Int!) {
+query Issue ($repo_owner: String!, $repo_name: String!, $issue_num: Int!) {
     repository(owner: $repo_owner, name: $repo_name) {
         issue(number: $issue_num) {
             title
@@ -184,7 +184,7 @@ query($repo_owner: String!, $repo_name: String!, $issue_num: Int!) {
 
 ```graphql
 # { "keyword": "autoclosure repo:kingcos/Perspective state:open" }
-query($keyword: String!) {
+query Search ($keyword: String!) {
     search(first: 10, query: $keyword, type: ISSUE) {
         edges {
             node {
