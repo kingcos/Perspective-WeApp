@@ -1,11 +1,32 @@
 {
-  "pages":[
-    "pages/index/index"
+  "pages": [
+    "pages/articles/articles",
+    "pages/profile/profile"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#000",
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/articles/articles",
+        "text": "Articles",
+        "iconPath": "utils/resources/articles.png",
+        "selectedIconPath": "utils/resources/articles_selected.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "Profile",
+        "iconPath": "utils/resources/profile.png",
+        "selectedIconPath": "utils/resources/profile_selected.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#333333",
     "navigationBarTitleText": "Perspective",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   }
 }
