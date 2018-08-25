@@ -10,7 +10,6 @@ A WeApp of my personal blog - Perspective.
 
 - [Perspective-Vapor - in Swift](https://github.com/kingcos/Perspective-Vapor)
 
-
 ## LICENSE
 
 - MIT
