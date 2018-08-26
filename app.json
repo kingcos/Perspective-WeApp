@@ -23,10 +23,9 @@
     ]
   },
   "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#333333",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "Perspective",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "black"
   }
 }
