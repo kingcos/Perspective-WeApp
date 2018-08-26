@@ -12,7 +12,7 @@
   <!-- Articles list -->
   <view class='body'>
     <block wx:for='{{articles}}' wx:for-item='article' wx:key='articles'>
-      <view class='article'>
+      <view class='article' style='background:{{article.background}}'>
         <view class='head'>
           <view class='title'>{{article.title}}</view>
         </view>
@@ -27,7 +27,7 @@
                 {{label.name}}
               </view>
             </block>
-            <view class='date'>180506</view>
+            <view class='date'>{{article.created_at}}</view>
           </view>
           <view class='read'>READ</view>
         </view>

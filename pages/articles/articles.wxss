@@ -54,8 +54,9 @@
   align-self: flex-end;
   border-radius: 50rpx;
   padding: 10rpx 30rpx;
-  background-color: #0000ffa1;
+  background-color: #333333;
   font-weight: bold;
+  box-shadow: 1rpx 2rpx 5rpx;
 }
 
 /* 文章 - 主体 - 细节部分 - 评论 - 图标 */
