@@ -1,3 +1,37 @@
-<view>
-  <text>Articles</text>
+<!-- Loading -->
+<!-- <block wx:if="{{showLoading}}">
+  <view class="page-loading">
+    <text class="weui-loading">
+    <text class="loading-text">玩命加载中</text>
+  </view>
+</block> -->
+<view class='page'>
+  <view class='head'>
+    <view class='title'>Ariticles</view>
+  </view>
+  <!-- Articles list -->
+  <view class='body'>
+    <block wx:for='{{articles}}' wx:for-item='article' wx:key='articles'>
+      <view class='article'>
+        <view class='head'>
+          <view class='title'>{{article.title}}</view>
+        </view>
+        <view class='body'>
+          <view class='details'>
+            <view class='comment'>
+              <image class='icon' src='../../utils/resources/comments.png'></image>
+              <text class='number'>{{article.comments}}</text>
+            </view>
+            <block wx:for='{{article.labels}}' wx:for-item='label' wx:key='label'>
+              <view class='labels'>
+                {{label.name}}
+              </view>
+            </block>
+            <view class='date'>180506</view>
+          </view>
+          <view class='read'>READ</view>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>
