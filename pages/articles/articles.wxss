@@ -1,48 +1,55 @@
 /* 页面整体 */
+
 .page {
   margin: 0rpx 20rpx;
 }
 
 /* 页面标题 */
+
 .page .head .title {
   font-size: 96rpx;
   font-weight: bolder;
 }
 
 /* 每个文章项的部分 */
+
 .article {
   display: flex;
   flex-direction: column;
   margin-bottom: 30rpx;
   border-radius: 30rpx;
   box-shadow: 1rpx 2rpx 10rpx;
-  background-image: radial-gradient(circle at top left, #333333, #d81606);
+  background: radial-gradient(circle at top left, #333333, #d81606);
 }
 
 /* 文章 - 头部 - 标题 */
+
 .article .head .title {
   font-size: 48rpx;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
   margin: 20rpx 30rpx 30rpx 30rpx;
 }
 
 /* 文章 - 主体 */
+
 .article .body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #ffffff;
+  color: #fff;
   margin: 30rpx 30rpx 20rpx 30rpx;
 }
 
 /* 文章 - 主体 - 细节部分 */
+
 .article .body .details {
   display: flex;
   flex-direction: column;
 }
 
 /* 文章 - 主体 - 阅读 */
+
 .article .body .read {
   align-self: flex-end;
   border-radius: 50rpx;
@@ -52,6 +59,7 @@
 }
 
 /* 文章 - 主体 - 细节部分 - 评论 - 图标 */
+
 .article .body .details .comment .icon {
   width: 30rpx;
   height: 30rpx;
@@ -61,18 +69,21 @@
 }
 
 /* 文章 - 主体 - 细节部分 - 评论 - 数量 */
+
 .article .body .details .comment .number {
   vertical-align: middle;
 }
 
 /* 文章 - 主体 - 细节部分 - 标签 */
+
 .article .body .details .labels {
   padding-left: 10rpx;
   padding-right: 10rpx;
-  margin-right: 10rpx; 
+  margin-right: 10rpx;
 }
 
 /* 文章 - 主体 - 细节部分 - 日期 */
+
 .article .body .details .date {
   padding-left: 5rpx;
 }
