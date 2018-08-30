@@ -69,5 +69,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  readDetails: function (event) {
+    var number = event.currentTarget.id
+
+    wx.navigateTo({
+      url: '../details/details'
+    })
   }
 })
