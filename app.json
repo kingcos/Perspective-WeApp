@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/articles/articles",
+    "pages/details/details",
     "pages/profile/profile"
   ],
   "tabBar": {
