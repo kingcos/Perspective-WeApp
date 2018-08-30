@@ -14,5 +14,19 @@ module.exports = {
         })
       }
     })
+  },
+  // Request - Ariticle details
+  fetchArticleDetails: function (articleNumber, callback) {
+    wx.request({
+      url: Constants.API_ARTICLE_DETAILS_URL + articleNumber,
+      success: function (response) {
+        callback(response.data)
+      },
+      fail: function () {
+        wx.showToast({
+          title: Constants.MESSAGE_ERROR_REQUEST_FAILED,
+        })
+      }
+    })
   }
 }
