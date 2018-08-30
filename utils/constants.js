@@ -1,6 +1,7 @@
 // APIs
 const API_BASE_URL = "https://kingcos.top/repos"
 const API_ARTICLES_URL = API_BASE_URL.concat("/kingcos/perspective/issues")
+const API_ARTICLE_DETAILS_URL = API_BASE_URL.concat("/kingcos/perspective/issues/")
 
 // ERROR Messages
 const MESSAGE_ERROR_REQUEST_FAILED = "网络异常，请检查网络并重试"
