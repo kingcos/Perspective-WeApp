@@ -72,10 +72,8 @@ Page({
   },
 
   readDetails: function (event) {
-    var number = event.currentTarget.id
-
     wx.navigateTo({
-      url: '../details/details'
+      url: '../details/details?number=' + event.currentTarget.id
     })
   }
 })
