@@ -12,7 +12,7 @@
   <!-- Articles list -->
   <view class='body'>
     <block wx:for='{{articles}}' wx:for-item='article' wx:key='articles'>
-      <view class='article' style='background:{{article.background}}'>
+      <view class='article' style='background:{{article.background}}' bindtap='readDetails' id='{{article.number}}'>
         <view class='head'>
           <view class='title'>{{article.title}}</view>
         </view>
