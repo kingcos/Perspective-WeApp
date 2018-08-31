@@ -1,12 +1,15 @@
 var Network = require('../../utils/network.js')
 
+const app = getApp();
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     articleNumber: '',
-    article: ''
+    article: {},
+    markdownEntry: {}
   },
 
   /**
@@ -26,8 +29,11 @@ Page({
       wx.hideLoading()
 
       if (data.status == 0) {
+        let markdown = app.towxml.toJson(data.data.body, 'markdown');
+ 
         that.setData({
-          article: data.data
+          article: data.data,
+          markdownEntry: markdown
         })
       } else {
         wx.showToast({
@@ -41,6 +47,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   }
 })
