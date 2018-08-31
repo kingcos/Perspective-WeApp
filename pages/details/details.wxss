@@ -1,10 +1,58 @@
 /**基础风格样式**/
 @import '/towxml/style/main.wxss';
+
 /**主题配色（浅色样式）**/
 @import '/towxml/style/theme/light.wxss';
+
 /**主题配色（深色样式）**/
 @import '/towxml/style/theme/dark.wxss';
 
-.markdown {
+/* 页面整体 */
+
+.article {
+  margin: 0rpx 20rpx;
+  padding-bottom: 20rpx;
+}
+
+/* 页面标题 */
+
+.article .title {
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+
+/* 分割线 */
+
+.line {
+  width: 100%;
+  margin-top: 20rpx;
+  border-top: 1px #989898 solid;
+}
+
+.article .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* 文章 - 评论 - 图标 */
+
+.article .info .comment .icon {
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+  margin-right: 5rpx;
+}
+
+/* 文章 - 评论 - 数量 */
+
+.article .info .comment .number {
+  vertical-align: middle;
+}
+
+/* Markdown 主体 */
+
+.article .markdown {
   padding-bottom: 20rpx;
 }

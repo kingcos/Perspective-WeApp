@@ -1,4 +1,21 @@
 <import src="/towxml/entry.wxml" />
-<view class='markdown'>
-  <template is="entry" data="{{...markdownEntry}}" />
+<view class='article'>
+  <view class='title'>
+    {{article.title}}
+  </view>
+  <view class='line'></view>
+  <view class='info'>
+    <view class='comment'>
+      <image class='icon' src='../../utils/resources/comments_black.png'></image>
+      <text class='number'>{{article.comments}}</text>
+    </view>
+    <block wx:for='{{article.labels}}' wx:for-item='label' wx:key='label'>
+      <view class='labels'>
+        {{label.name}}
+      </view>
+    </block>
+  </view>
+  <view class='markdown'>
+    <template is="entry" data="{{...markdownEntry}}" />
+  </view>
 </view>

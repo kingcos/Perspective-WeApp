@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articleNumber: '',
     article: {},
     markdownEntry: {}
   },
@@ -16,10 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      articleNumber: options.number
-    });
-
     // Saved `this` Page
     var that = this
 
@@ -30,7 +25,8 @@ Page({
 
       if (data.status == 0) {
         let markdown = app.towxml.toJson(data.data.body, 'markdown');
- 
+        markdown.theme = 'light';
+
         that.setData({
           article: data.data,
           markdownEntry: markdown
@@ -44,9 +40,10 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 用户点击右上角分享
    */
-  onPullDownRefresh: function () {
+  onShareAppMessage: function () {
 
-  }
+  },
+
 })
