@@ -44,6 +44,8 @@ Page({
 
     page = 1
     Network.fetchArticles(page, function (data) {
+      wx.stopPullDownRefresh()
+      
       if (data.status == 0) {
         that.setData({
           articles: data.data
