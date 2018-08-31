@@ -1,4 +1,5 @@
 var Network = require('../../utils/network.js')
+var Constants = require('../../utils/constants.js')
 
 const app = getApp();
 
@@ -18,7 +19,9 @@ Page({
     // Saved `this` Page
     var that = this
 
-    wx.showLoading()
+    wx.showLoading({
+      title: Constants.TIP_LOADING,
+    })
 
     Network.fetchArticleDetails(options.number, function (data) {
       wx.hideLoading()

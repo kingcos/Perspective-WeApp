@@ -1,4 +1,6 @@
 var Network = require('../../utils/network.js')
+var Constants = require('../../utils/constants.js')
+
 var page = 1
 
 Page({
@@ -17,7 +19,9 @@ Page({
     // Saved `this` Page
     var that = this
 
-    wx.showLoading()
+    wx.showLoading({
+      title: Constants.TIP_LOADING,
+    })
 
     page = 1
     Network.fetchArticles(page, function (data) {
@@ -65,7 +69,9 @@ Page({
     // Saved `this` Page
     var that = this
 
-    wx.showLoading()
+    wx.showLoading({
+      title: Constants.TIP_LOADING,
+    })
 
     page += 1
 
