@@ -1,4 +1,5 @@
 var Network = require('../../utils/network.js')
+var page = 1
 
 Page({
 
@@ -6,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articles: [],
+    articles: []
   },
 
   /**
@@ -18,7 +19,8 @@ Page({
 
     wx.showLoading()
 
-    Network.fetchArticles(function (data) {
+    page = 1
+    Network.fetchArticles(page, function (data) {
       wx.hideLoading()
 
       if (data.status == 0) {
@@ -40,11 +42,10 @@ Page({
     // Saved `this` Page
     var that = this
 
-    wx.showLoading()
-
-    Network.fetchArticles(function (data) {
-      wx.hideLoading()
-
+    page = 1
+    Network.fetchArticles(page, function (data) {
+      wx.stopPullDownRefresh()
+      
       if (data.status == 0) {
         that.setData({
           articles: data.data
@@ -61,7 +62,32 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    // Saved `this` Page
+    var that = this
 
+    wx.showLoading()
+
+    page += 1
+
+    Network.fetchArticles(page, function (data) {
+      wx.hideLoading()
+
+      if (data.status == 0) {
+        var rawArticles = that.data.articles
+        
+        for (var i = 0; i < data.data.length; i += 1) {
+          rawArticles.push(data.data[i])
+        }
+
+        that.setData({
+          articles: rawArticles
+        })
+      } else {
+        wx.showToast({
+          title: data.message,
+        })
+      }
+    })
   },
 
   /**

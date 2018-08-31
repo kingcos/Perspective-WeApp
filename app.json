@@ -24,7 +24,7 @@
     ]
   },
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "Perspective",
     "navigationBarTextStyle": "black"
