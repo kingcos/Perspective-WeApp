@@ -29,13 +29,15 @@
   border-top: 1px #989898 solid;
 }
 
+/* 文章 - 简介 */
+
 .article .info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-/* 文章 - 评论 - 图标 */
+/* 文章 - 简介 - 评论 - 图标 */
 
 .article .info .comment .icon {
   width: 30rpx;
@@ -45,7 +47,7 @@
   margin-right: 5rpx;
 }
 
-/* 文章 - 评论 - 数量 */
+/* 文章 - 简介 - 评论 - 数量 */
 
 .article .info .comment .number {
   vertical-align: middle;
