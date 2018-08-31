@@ -2,6 +2,7 @@
 
 .page {
   margin: 0rpx 20rpx;
+  padding-bottom: 20rpx;
 }
 
 /* 页面标题 */

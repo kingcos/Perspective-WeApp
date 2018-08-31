@@ -4,3 +4,7 @@
 @import '/towxml/style/theme/light.wxss';
 /**主题配色（深色样式）**/
 @import '/towxml/style/theme/dark.wxss';
+
+.markdown {
+  padding-bottom: 20rpx;
+}
