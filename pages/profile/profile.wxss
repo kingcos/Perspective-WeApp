@@ -23,15 +23,16 @@
   height: 300rpx;
   display: block;
   margin: auto;
+  border-radius: 50%;
 }
 
 /* 引言 */
 
 .profile .body .words {
-    margin: 10rpx;
-    padding: 15rpx;
-    border-left: 8rpx solid #ccc;
-    background-color:#f1f1f1;
+  margin: 10rpx;
+  padding: 15rpx;
+  border-left: 8rpx solid #ccc;
+  background-color: #f1f1f1;
 }
 
 .body .repos .column {
@@ -48,7 +49,7 @@
   margin-bottom: 20rpx;
   border-radius: 15rpx;
   color: white;
-  background: radial-gradient(circle at top left, #333333, #d81606);
+  background: radial-gradient(circle at top left, #333, #d81606);
 }
 
 .body .repos .column .name {
@@ -71,11 +72,9 @@
 .body .repos .column .language {
   font-size: 28rpx;
   font-weight: bold;
-
 }
 
 .body .repos .column .star {
   font-size: 28rpx;
   font-weight: bold;
-
 }

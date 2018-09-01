@@ -3,12 +3,12 @@
     <view class='title'>
       Profile
     </view>
-    <image class='avatar' src='../../img/weapp_code.jpg'></image>
+    <image class='avatar' src='../../utils/resources/avatar.jpg'></image>
   </view>
 
   <view class='body'>
     <view class='words'>
-      iOSer & Swifter. Enjoy coding & design. Beginner in DL.
+      iOSer & Swifter. Enjoy coding & design.
     </view>
     <view class='repos' style="width:100%">
       <view class='column'>
