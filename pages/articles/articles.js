@@ -15,7 +15,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    page = 1
+    wx.startPullDownRefresh()
+
     this.loadArticles()
   },
 
@@ -32,6 +33,11 @@ Page({
    */
   onReachBottom: function () {
     page += 1
+
+    wx.showLoading({
+      title: Constants.MESSAGE_LOADING,
+    })
+
     this.loadArticles()
   },
 
@@ -46,17 +52,27 @@ Page({
     // Saved `this` Page
     var that = this
 
-    wx.showLoading({
-      title: Constants.MESSAGE_LOADING,
-    })
-
     Network.fetchArticles(page, function (data) {
-      wx.hideLoading()
-
       if (data.status == 0) {
-        that.setData({
-          articles: data.data
-        })
+        if (page == 1) {
+          that.setData({
+            articles: data.data
+          })
+
+          wx.stopPullDownRefresh()
+        } else {
+          wx.hideLoading()
+
+          var rawArticles = that.data.articles
+
+          for (var i = 0; i < data.data.length; i += 1) {
+            rawArticles.push(data.data[i])
+          }
+
+          that.setData({
+            articles: rawArticles
+          })
+        }
       } else {
         wx.showToast({
           title: data.message,

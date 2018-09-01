@@ -19,6 +19,7 @@
 .article .title {
   font-size: 48rpx;
   font-weight: bolder;
+  text-align: center;
 }
 
 /* 分割线 */
