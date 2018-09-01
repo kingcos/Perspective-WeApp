@@ -9,33 +9,30 @@ Page({
    * 页面的初始数据
    */
   data: {
-    repos: []
+    repos: [],
+    listHeight: 0,
+    listWidth: 0,
+    repoColOne: [],
+    repoColTwo: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // Saved `this` Page
     var that = this
 
-    wx.showLoading({
-      title: Constants.MESSAGE_LOADING,
-    })
+    wx.startPullDownRefresh()
 
-    page = 1
-    Network.fetchProfileRepos(page, function (data) {
-      wx.hideLoading()
-
-      if (data.status == 0) {
+    wx.getSystemInfo({
+      success: function (res) {
         that.setData({
-          repos: data.data
+          listHeight: res.windowHeight,
+          listWidth: res.windowWidth * 0.48
         })
-      } else {
-        wx.showToast({
-          title: data.message,
-        })
-      }
+
+        that.loadProfileRepos()
+      },
     })
   },
 
@@ -50,7 +47,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    page += 1
+
+    wx.showLoading({
+      title: Constants.MESSAGE_LOADING,
+    })
+
+    this.loadProfileRepos()
   },
 
   /**
@@ -58,5 +61,39 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+
+  loadProfileRepos: function () {
+    // Saved `this` Page
+    var that = this
+
+
+    Network.fetchProfileRepos(page, function (data) {
+      if (data.status == 0) {
+        wx.stopPullDownRefresh()
+
+        if (page == 1) {
+          that.setData({
+            repos: data.data
+          })
+        } else {
+          wx.hideLoading()
+
+          var rawRepos = that.data.repos
+
+          for (var i = 0; i < data.data.length; i += 1) {
+            rawRepos.push(data.data[i])
+          }
+
+          that.setData({
+            repos: rawRepos
+          })
+        }
+      } else {
+        wx.showToast({
+          title: data.message,
+        })
+      }
+    })
   }
 })

@@ -31,3 +31,38 @@
     border-left: 8rpx solid #ccc;
     background-color:#f1f1f1
 }
+
+.body .repos .column {
+  width: 48%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.body .repos .column .repo {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: 1rpx;
+  padding: 10rpx;
+}
+
+.body .repos .column .name {
+  font-size: 48rpx;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.body .repos .column .description {
+  font-size: 28rpx;
+}
+
+.body .repos .column .language {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.body .repos .column .star {
+  font-size: 28rpx;
+  font-weight: bold;
+}
