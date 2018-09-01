@@ -20,7 +20,7 @@ Page({
     var that = this
 
     wx.showLoading({
-      title: Constants.TIP_LOADING,
+      title: Constants.MESSAGE_LOADING,
     })
 
     page = 1
@@ -70,7 +70,7 @@ Page({
     var that = this
 
     wx.showLoading({
-      title: Constants.TIP_LOADING,
+      title: Constants.MESSAGE_LOADING,
     })
 
     page += 1

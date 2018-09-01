@@ -20,7 +20,7 @@ Page({
     var that = this
 
     wx.showLoading({
-      title: Constants.TIP_LOADING,
+      title: Constants.MESSAGE_LOADING,
     })
 
     Network.fetchArticleDetails(options.number, function (data) {
