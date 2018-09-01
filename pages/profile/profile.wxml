@@ -1,3 +1,13 @@
-<view>
-  <text>Profile</text>
+<view class='profile'>
+  <view class='head'>
+    <view class='title'>
+      Profile
+    </view>
+    <image class='avatar' src='../../img/weapp_code.jpg'></image>
+  </view>
+  <view class='body'>
+    <view class='words'>
+      iOSer & Swifter. Enjoy coding & design. Beginner in DL.
+    </view>
+  </view>
 </view>

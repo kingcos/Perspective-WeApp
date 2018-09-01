@@ -1,45 +1,42 @@
+var Network = require('../../utils/network.js')
+var Constants = require('../../utils/constants.js')
+
+var page = 1
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    repos: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
+    // Saved `this` Page
+    var that = this
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
+    wx.showLoading({
+      title: Constants.MESSAGE_LOADING,
+    })
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
+    page = 1
+    Network.fetchProfileRepos(page, function (data) {
+      wx.hideLoading()
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
+      if (data.status == 0) {
+        that.setData({
+          repos: data.data
+        })
+      } else {
+        wx.showToast({
+          title: data.message,
+        })
+      }
+    })
   },
 
   /**

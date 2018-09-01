@@ -1,0 +1,33 @@
+/* 页面整体 */
+
+.profile {
+  margin: 0rpx 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.profile .head {
+  width: 100%;
+}
+
+/* 页面标题 */
+
+.profile .head .title {
+  font-size: 96rpx;
+  font-weight: bolder;
+}
+
+/* 头像 */
+
+.profile .head .avatar {
+  width: 300rpx;
+  height: 300rpx;
+  display: block;
+  margin: auto;
+}
+
+.profile .body .words {
+    margin: 10rpx;
+    padding: 15rpx;
+    border-left: 8rpx solid #ccc;
+    background-color:#f1f1f1
+}

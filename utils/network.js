@@ -28,5 +28,19 @@ module.exports = {
         })
       }
     })
+  },
+  // Request - Profile repos
+  fetchProfileRepos: function (page, callback) {
+    wx.request({
+      url: Constants.API_REPOS_URL + "?page=" + page,
+      success: function (response) {
+        callback(response.data)
+      },
+      fail: function () {
+        wx.showToast({
+          title: Constants.MESSAGE_ERROR_REQUEST_FAILED,
+        })
+      }
+    })
   }
 }
