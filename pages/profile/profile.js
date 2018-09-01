@@ -9,9 +9,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    repos: [],
-    listHeight: 0,
-    listWidth: 0,
     repoColOne: [],
     repoColTwo: [],
   },
@@ -24,35 +21,13 @@ Page({
 
     wx.startPullDownRefresh()
 
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          listHeight: res.windowHeight,
-          listWidth: res.windowWidth * 0.48
-        })
-
-        that.loadProfileRepos()
-      },
-    })
+    that.loadProfileRepos()
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    page += 1
-
-    wx.showLoading({
-      title: Constants.MESSAGE_LOADING,
-    })
-
     this.loadProfileRepos()
   },
 
@@ -67,26 +42,43 @@ Page({
     // Saved `this` Page
     var that = this
 
-
     Network.fetchProfileRepos(page, function (data) {
       if (data.status == 0) {
         wx.stopPullDownRefresh()
 
         if (page == 1) {
+          var reposOne = []
+          var reposTwo = []
+
+          for (var i = 0; i < data.data.length; i += 1) {
+            if (i % 2 == 0) {
+              reposOne.push(data.data[i])
+            } else {
+              reposTwo.push(data.data[i])
+            }
+          }
+
           that.setData({
-            repos: data.data
+            repoColOne: reposOne,
+            repoColTwo: reposTwo
           })
         } else {
           wx.hideLoading()
 
-          var rawRepos = that.data.repos
+          var reposOne = that.data.repoColOne
+          var reposTwo = that.data.repoColTwo
 
           for (var i = 0; i < data.data.length; i += 1) {
-            rawRepos.push(data.data[i])
+            if (i % 2 == 0) {
+              reposOne.push(data.data[i])
+            } else {
+              reposTwo.push(data.data[i])
+            }
           }
 
           that.setData({
-            repos: rawRepos
+            repoColOne: reposOne,
+            repoColTwo: reposTwo
           })
         }
       } else {

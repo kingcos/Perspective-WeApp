@@ -45,6 +45,8 @@
   border-style: solid;
   border-width: 1rpx;
   padding: 10rpx;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx;
 }
 
 .body .repos .column .name {

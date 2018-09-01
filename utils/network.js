@@ -32,7 +32,7 @@ module.exports = {
   // Request - Profile repos
   fetchProfileRepos: function (page, callback) {
     wx.request({
-      url: Constants.API_REPOS_URL + "?page=" + page,
+      url: Constants.API_REPOS_URL + "?page=" + page + "&sort=pushed",
       success: function (response) {
         callback(response.data)
       },

@@ -1,53 +1,53 @@
 <view class='profile'>
-  <scroll-view scroll-y="true" style="height:{{listHeight}}px" bindscrolltolower="loadProfileRepos">
-    <view class='head'>
-      <view class='title'>
-        Profile
-      </view>
-      <image class='avatar' src='../../img/weapp_code.jpg'></image>
+  <view class='head'>
+    <view class='title'>
+      Profile
     </view>
-    <view class='body'>
-      <view class='words'>
-        iOSer & Swifter. Enjoy coding & design. Beginner in DL.
-      </view>
-      <view class='repos' style="width:100%">
-        <block wx:for="{{repos}}" wx:key="id">
-          <view class='column'>
-            <view class='repo'>
-              <view class='name'>
-                {{item.name}}
-              </view>
-              <view class='description'>
-                {{item.description}}
-              </view>
-              <view class='language'>
-                {{item.language}}
-              </view>
-              <view class='star'>
-                {{item.stargazers_count}}
-              </view>
+    <image class='avatar' src='../../img/weapp_code.jpg'></image>
+  </view>
+
+  <view class='body'>
+    <view class='words'>
+      iOSer & Swifter. Enjoy coding & design. Beginner in DL.
+    </view>
+    <view class='repos' style="width:100%">
+      <view class='column'>
+        <block wx:for="{{repoColOne}}" wx:key="id">
+          <view class='repo'>
+            <view class='name'>
+              {{item.name}}
             </view>
-          </view>
-        </block>
-        <block wx:for="{{repos}}" wx:key="id">
-          <view class='column'>
-            <view class="repo">
-              <view class='name'>
-                {{item.name}}
-              </view>
-              <view class='descrpiton'>
-                {{item.descrpiton}}
-              </view>
-              <view class='language'>
-                {{item.language}}
-              </view>
-              <view class='star'>
-                {{item.stargazers_count}}
-              </view>
+            <view class='description'>
+              {{item.description}}
+            </view>
+            <view class='language'>
+              {{item.language}}
+            </view>
+            <view class='star'>
+              {{item.stargazers_count}}
             </view>
           </view>
         </block>
       </view>
+      <view class='column'>
+        <block wx:for="{{repoColTwo}}" wx:key="id">
+          <view class='repo'>
+            <view class='name'>
+              {{item.name}}
+            </view>
+            <view class='description'>
+              {{item.description}}
+            </view>
+            <view class='language'>
+              {{item.language}}
+            </view>
+            <view class='star'>
+              {{item.stargazers_count}}
+            </view>
+          </view>
+        </block>
+      </view>
     </view>
-  </scroll-view>
+  </view>
+
 </view>
