@@ -16,6 +16,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadDetails(options.number)
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  },
+
+  loadDetails: function (num) {
     // Saved `this` Page
     var that = this
 
@@ -23,7 +34,7 @@ Page({
       title: Constants.MESSAGE_LOADING,
     })
 
-    Network.fetchArticleDetails(options.number, function (data) {
+    Network.fetchArticleDetails(num, function (data) {
       wx.hideLoading()
 
       if (data.status == 0) {
@@ -40,13 +51,6 @@ Page({
         })
       }
     })
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
+  }
 
 })
