@@ -10,11 +10,17 @@ A WeApp of my personal blog - Perspective.
 
 ## Screenshots
 
-![](img/articles.PNG)
+- Articles Page
 
-![](img/profile.PNG)
+<img src="img/articles.PNG" width="215">
 
-![](img/details.PNG)
+- Profile Page
+
+<img src="img/profile.PNG" width="215">
+
+- Details Page
+
+<img src="img/details.PNG" width="215">
 
 ## Features
 
