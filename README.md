@@ -4,16 +4,26 @@ A WeApp of my personal blog - Perspective.
 
 ## WeApp QRCode
 
+- Scan this QR code by your Wechar client:
+
 <img src="img/weapp_code.jpg" width="215">
+
+## Screenshots
+
+![](img/articles.PNG)
+
+![](img/profile.PNG)
+
+![](img/details.PNG)
 
 ## Features
 
-- [ ] List articles
-- [ ] Show one article in Markdown format
-- [ ] Show my profile
+- [x] List articles
+- [x] Show one article in Markdown format
+- [x] Show my profile
+- [x] Pull to refresh
+- [x] Pull to load
 - [ ] List comments
-- [ ] Pull to refresh
-- [ ] Pull to load
 - [ ] Search articles by keywords
 
 ## Back-End
