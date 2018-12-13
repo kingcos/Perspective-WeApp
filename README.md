@@ -4,7 +4,7 @@ A WeApp of my personal blog - Perspective.
 
 ## WeApp QRCode
 
-- Scan this QR code by your Wechar client:
+- Scan this QR code by your Wechat client:
 
 <img src="img/weapp_code.jpg" width="215">
 
